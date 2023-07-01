@@ -1,0 +1,474 @@
+﻿:root {
+    --YELLOW: #ffd700;
+    --BLACK: #2b2b2b;
+    --WHITE: #f8f8f8;
+    --GREY: #5c5c5c;
+    --GREY_LIGHT: #bcbcbc;
+    --BACKGROUND_COLOR: #edeff5;
+    --INTER: 'Inter', sans-serif;
+    --PHILOSOPHER: 'Philosopher', sans-serif;
+}
+
+body {
+    font-family: 'Philosopher', sans-serif;
+    background-color: var(--BACKGROUND_COLOR);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Container {
+    width: 95%;
+    background-color: var(--WHITE);
+    margin-top: 1rem;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.HeaderNav {
+    display: flex;
+    padding: 15px 30px;
+    justify-content: space-between;
+    background-color: var(--WHITE);
+    border-radius: 1rem;
+}
+
+.Logo {
+    flex-shrink: 0;
+}
+
+.banner {
+    height: 300px;
+    width: auto;
+    background-color: #ebefef;
+    margin: 1.5rem;
+    border-radius: 1rem;
+    background-image: url(ASSET/dog.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-position-y: center;
+    background-size: 32rem;
+}
+
+.navSelector {
+    border-style: none;
+    background-color: unset;
+    font-size: 1rem;
+    font-family: var(--INTER);
+}
+
+    .navSelector:focus-visible,
+    .navSelector:focus {
+        outline: none;
+    }
+
+#RightContainer {
+    display: flex;
+    align-items: center;
+}
+
+.Navigation {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 1.5rem;
+}
+
+.Separator {
+    width: 2px;
+    margin: 20px;
+    height: inherit;
+    background-color: var(--YELLOW);
+}
+
+.Advertisement {
+    transform: rotate(-20deg);
+    display: inline-block;
+    background-color: var(--BLACK);
+    padding: 10px 20px;
+    left: 62px;
+    top: 100px;
+    position: relative;
+}
+
+.Advertisement-text {
+    font-size: 24px;
+    color: var(--WHITE);
+    font-family: var(--PHILOSOPHER)
+}
+
+.Emphasis {
+    font-weight: bold;
+    font-family: var(--INTER);
+}
+
+.ContactContainer {
+    height: 150px;
+    width: 100%;
+    background-color: var(--BLACK);
+    color: var(--YELLOW);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0 0 1rem 1rem;
+}
+
+    .ContactContainer .Logo {
+        flex-shrink: 0;
+        padding-left: 2rem;
+    }
+
+#ContactLink {
+    padding-right: 2rem;
+    display: flex;
+    font-family: var(--INTER)
+}
+
+li {
+    font-family: var(--PHILOSOPHER);
+    list-style-type: none;
+    color: var(--WHITE);
+}
+
+a {
+    text-decoration: none;
+}
+
+.LinksFooter {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+    .LinksFooter img {
+        width: 20px;
+    }
+
+/* C A T A L O G*/
+
+.TwoPanelCatalog {
+    display: flex;
+    gap: 1rem;
+}
+
+    .TwoPanelCatalog .Separator {
+        background-color: var(--GREY_LIGHT);
+    }
+
+.LeftPanel {
+    display: flex;
+}
+
+.Filter {
+    display: flex;
+    margin: 2rem;
+    margin-left: 4rem;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+    .Filter select {
+        border-style: none;
+        background-color: unset;
+        font-size: 1rem;
+        font-family: var(--INTER);
+        color: var(--GREY);
+        border-bottom: 1px solid var(--GREY);
+    }
+
+        .Filter select:focus-visible,
+        .Filter select:focus {
+            outline: none;
+        }
+
+#FilterTitle {
+    font-family: 'Philosopher';
+    color: var(--BLACK);
+    font-size: 1.25rem;
+}
+
+.CheckboxFilter h3 {
+    font-family: 'Philosopher';
+    color: var(--BLACK);
+}
+
+.CheckboxFilter {
+    display: flex;
+    flex-direction: column;
+}
+
+    .CheckboxFilter label {
+        font-family: var(--INTER);
+        color: var(--GREY);
+    }
+
+
+/* productos*/
+
+.ProductGrid {
+    margin-top: 2rem;
+}
+
+.Product {
+    display: flex;
+    width: 15rem;
+    height: 20rem;
+    background-color: var(--WHITE);
+    border: 1px solid var(--GREY);
+    border-radius: 0.75rem;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+    .Product img {
+        width: 60%;
+        height: auto;
+        margin-top: 0.5rem;
+        align-self: center;
+        object-fit: contain;
+    }
+
+.DataProduct {
+    margin: 1rem;
+}
+
+.ProductTitle,
+.ProductDescription {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ProductTitle {
+    font-family: var(--INTER);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.ProductDescription {
+    font-family: var(--PHILOSOPHER);
+    font-weight: 200;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--GREY);
+}
+
+.ProductPrice {
+    font-family: var(--INTER);
+    color: var(--BLACK);
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.ProductBuy {
+    font-size: 0.75rem;
+    font-family: var(--INTER);
+    border-radius: 0.25rem;
+    border: 1px solid var(--GREY);
+    background-color: var(--WHITE);
+    color: var(--GREY);
+    width: 100%;
+}
+
+
+/* I T E M  - D E S C R I P T I O N*/
+
+.ItemContainer {
+    margin: 2rem;
+}
+
+.Path {
+    font-family: var(--INTER);
+    color: var(--GREY);
+    font-size: 0.75rem;
+}
+
+.ItemContent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 3rem;
+}
+
+.Images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 20px;
+}
+
+.ItemImages {
+    display: flex;
+    margin: 20px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 2rem;
+}
+
+    .ItemImages img {
+        width: 80px;
+        height: auto;
+        margin-top: 0.5rem;
+        align-self: center;
+        object-fit: contain;
+    }
+
+.ActualImage {
+    width: 400px;
+}
+
+    .ActualImage img {
+        width: 400px;
+        height: auto;
+        margin-top: 0.5rem;
+        align-self: center;
+        object-fit: contain;
+    }
+
+.ItemData {
+    display: flex;
+    flex-direction: column;
+    margin-right: 70px;
+}
+
+.ItemTitle,
+.ItemPrice {
+    font-family: var(--PHILOSOPHER);
+    font-size: 2.5rem;
+    color: var(--BLACK);
+}
+
+.ItemDescription {
+    font-family: var(--INTER);
+    color: var(--GREY);
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.ItemPrice {
+}
+
+.ItemSize {
+    height: 40px;
+    display: flex;
+    padding: 1.5rem;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.size {
+    font-family: var(--INTER);
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--GREY);
+}
+
+.ItemButton {
+    border: 2px solid var(--GREY_LIGHT);
+    border-radius: 0.5rem;
+    height: 3rem;
+    font-family: var(--INTER);
+    font-size: 1rem;
+    color: var(--BLACK);
+    font-weight: 500;
+    width: 200px;
+}
+
+.NavItem {
+}
+
+.MoreLikeThis {
+}
+
+
+/* ACCESS */
+
+.Login,
+.ABMStock {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 20px;
+    margin-left: 42%;
+    margin-bottom: 70px;
+    width: 270px;
+    gap: 1rem;
+}
+
+    .Login h2,
+    .ABMStock h2 {
+        font-family: var(--INTER);
+        font-size: 2.5rem;
+        color: var(--BLACK);
+        margin-bottom: 1rem;
+    }
+
+    .Login div,
+    .ABMStock .Field input {
+        border-bottom: 2px solid #d9d9d9;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .Login input,
+    .Field input {
+        border: none;
+        background-color: unset;
+        font-family: var(--INTER);
+        font-size: 1rem;
+    }
+
+    .Login label,
+    .Field label {
+        font-family: var(--PHILOSOPHER);
+        font-size: 1rem;
+        color: var(--BLACK);
+        display: block;
+        border: none;
+        background-color: unset;
+    }
+
+    .Login button {
+        border: none;
+        font-family: var(--INTER);
+        font-size: 1rem;
+        border-radius: 0.5rem;
+        color: var(--WHITE);
+        background-color: var(--BLACK);
+    }
+
+
+    /* ABM STOCK*/
+
+    .ABMStock form {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .ABMStock .Submit {
+        text-align-last: center;
+        border: none;
+        font-family: var(--INTER);
+        font-size: 1rem;
+        border-radius: 0.5rem;
+        color: var(--WHITE);
+        background-color: var(--BLACK);
+    }
+
+        .ABMStock .Submit input {
+            border: none;
+            font-family: var(--INTER);
+            font-size: 1rem;
+            margin: 6px;
+            color: var(--WHITE);
+            background-color: unset;
+        }
