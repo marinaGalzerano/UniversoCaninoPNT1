@@ -1,0 +1,23 @@
+﻿@model Prueba.Models.Product
+@{
+    ViewData["Title"] = "Item";
+}
+
+<div class="ItemContainer">
+    <div class="ItemContent">
+        <div class="Images">
+            <div class="ActualImage">
+                <div><img src=@Html.DisplayFor(model => model.Image)></div>
+            </div>
+        </div>
+        <span class="Separator"></span>
+        <div class="ItemData">
+            <div class="ItemTitle">@Html.DisplayFor(model => model.Name)</div>
+            <p class="ItemDescription">@Html.DisplayFor(model => model.Descr)</p>
+            <div class="ItemPrice">Price $@Html.DisplayFor(model => model.Price)</div>
+            <div class="ABM_Button">
+            <a asp-action="Index">Back to Catalog</a>
+            </div>
+        </div>
+    </div>
+</div>

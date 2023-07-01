@@ -1,0 +1,35 @@
+﻿@model Prueba.Models.Product
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="ItemContainer">
+    <div class="ItemTitle">Details</div>
+    <div class="ItemContent">
+        <div class="Images">
+            <div class="ActualImage">
+                <div><img src=@Html.DisplayFor(model => model.Image)></div>
+            </div>
+            <div class="Edit_ABM_Buttons">
+                <div class="ABM_Button">
+                    <a asp-action="Index">Back to List</a>
+                </div>
+
+                    <div class="ABM_Button" style="background-color: red">
+                        <form asp-action="Delete">
+                            <input type="hidden" asp-for="Id" />
+                            <input type="submit" value="Delete" class="DeletePepito" /> 
+                        </form>
+                    </div>
+
+            </div>
+        </div>
+        <span class="Separator"></span>
+        <div class="ItemData">
+            <div class="ItemTitle">@Html.DisplayFor(model => model.Name)</div>
+            <p class="ItemDescription">@Html.DisplayFor(model => model.Descr)</p>
+            <div class="ItemPrice">Price $@Html.DisplayFor(model => model.Price)</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+﻿@model Prueba.Models.Product;
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="ABMStock">
+    <h2>Create Product</h2>
+    <form asp-action="Create" method="post">
+        <div class="Field">
+            <label asp-for="Name">Name:</label>
+            <input asp-for="Name" required pattern="^[\w\W]{1,50}$" />
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="Field">
+            <label asp-for="Image">Image:</label>
+            <input asp-for="Image" />
+            <span asp-validation-for="Image"></span>
+        </div>
+        <div class="Field">
+            <label asp-for="Descr">Description:</label>
+            <input asp-for="Descr" />
+            <span asp-validation-for="Descr"></span>
+        </div>
+        <div class="Field">
+            <label asp-for="Price">Price:</label>
+            <input asp-for="Price" required pattern="^\d+(\.\d{1,2})?$" />
+            <span asp-validation-for="Price"></span>
+        </div>
+        <div class="Field">
+            <label asp-for="Tipo" class="control-label">Tipe:</label>
+            <select asp-for="Tipo" required class="form-control" asp-items="Html.GetEnumSelectList<TIPO_ANIMAL>()">
+                <option selected="Tipo" value="">Please select</option>
+            </select>
+            <span asp-validation-for="Tipo" class="text-danger"></span>
+        </div>
+        <div class="Submit">
+            <input type="submit" value="Create" />
+        </div>
+    </form>
+    <div class="ABM_Button">
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+        }

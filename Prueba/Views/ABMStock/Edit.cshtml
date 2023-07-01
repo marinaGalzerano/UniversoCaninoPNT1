@@ -1,0 +1,43 @@
+﻿@model Prueba.Models.Product;
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="ABMStock">
+    <h2>Edit Product</h2>
+    <form asp-action="Edit" method="post">
+        <div class="Field">
+            <label asp-for="Name">Name:</label>
+            <input asp-for="Name" required pattern="^[\w\W]{1,50}$">
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="ActualImage">
+            <div><img src=@Html.DisplayFor(model => model.Image)></div>
+        </div>
+        <div class="Field">
+            <label asp-for="Image">Image:</label>
+            <input asp-for="Image" />
+            <span asp-validation-for="Image"></span>
+        </div>
+        <div class="Field">
+            <label asp-for="Descr">Description:</label>
+            <input asp-for="Descr" />
+            <span asp-validation-for="Descr"></span>
+        </div>
+        <div class="Field">
+            <label asp-for="Price">Price:</label>
+            <input asp-for="Price" required pattern="^\d+(\.\d{1,2})?$" />
+            <span asp-validation-for="Price"></span>
+        </div>
+        <div class="Field">
+            <label asp-for="Tipo">Type:</label>
+            <input asp-for="Tipo" required />
+            <span asp-validation-for="Tipo"></span>
+        </div>
+        <div class="Submit">
+            <input type="submit" value="Edit" />
+        </div>
+    </form>
+    <div class="ABM_Button">
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
