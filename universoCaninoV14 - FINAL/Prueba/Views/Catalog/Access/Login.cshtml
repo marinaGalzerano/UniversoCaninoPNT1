@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="Login">
+    <h2>Acceso de Administrador</h2>
+    <form class="Login_Form" action="@Url.Action("Login","Access")" method="post">
+        <div class="Field">
+            <label for="name">Usuario:</label>
+            <input required type="text" id="name" name="Name" class="form-control input_user" value="" placeholder="Name" pattern="^[a-zA-Z]+$">
+        </div>
+        <div class="Field">
+            <label for="password">Contraseña:</label>
+            <input required type="password" id="password" name="Pswd" class="form-control input_pass" value="" placeholder="Password" pattern="^[\w\W]+$">
+        </div> 
+
+        @if (ViewData["Mensaje"] != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                @ViewData["Mensaje"]
+            </div>
+        }
+        
+        <div class="Submit">
+            <button type="submit" name="button" class="Login_Button">Iniciar Sesion</button>
+        </div>
+    </form>
+    <span class="Login_Msg">
+        No tienes una cuenta <a href="@Url.Action("Register","Access")" class="Anchor">Registrarse</a>
+    </span>
+</div>

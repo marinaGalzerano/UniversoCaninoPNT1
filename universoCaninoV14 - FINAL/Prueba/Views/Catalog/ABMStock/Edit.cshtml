@@ -1,0 +1,45 @@
+﻿@model Prueba.Models.Product;
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="ABMStock">
+    <h2>Editar Producto</h2>
+    <form asp-action="Edit" method="post">
+        <div class="Field">
+            <label asp-for="Name">Nombre:</label>
+            <input asp-for="Name" required pattern="^[\w\W]{1,50}$">
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="ActualImage">
+            <div><img src=@Html.DisplayFor(model => model.Image)></div>
+        </div>
+        <div class="Field">
+            <label asp-for="Image">Imagen:</label>
+            <input asp-for="Image" />
+            <span asp-validation-for="Image"></span>
+        </div>
+        <div class="Field">
+            <label asp-for="Descr">Descripción:</label>
+            <input asp-for="Descr" />
+            <span asp-validation-for="Descr"></span>
+        </div>
+        <div class="Field">
+            <label asp-for="Price">Precio:</label>
+            <input asp-for="Price" required pattern="^\d+(\.\d{1,2})?$" />
+            <span asp-validation-for="Price"></span>
+        </div>
+        <div class="Field">
+            <label asp-for="Tipo" class="control-label">Tipo:</label>
+            <select asp-for="Tipo" required class="form-control" asp-items="Html.GetEnumSelectList<TIPO_ANIMAL>()">
+                <option selected="Tipo" value="">Seleccionar tipo</option>
+            </select>
+            <span asp-validation-for="Tipo" class="text-danger"></span>
+        </div>
+        <div class="Submit">
+            <input type="submit" value="Editar" />
+        </div>
+    </form>
+    <div class="ABM_Button">
+        <a asp-action="Index">Volver a la lista</a>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="Login">
+    <h2>Registrar Nuevo Usuario</h2>
+    <form class="Login_Form" action="@Url.Action("Register","Access")" method="post">
+        <div class="Field">
+            <label for="name">Usuario:</label>
+            <input required type="text" id="name" name="Name" class="form-control input_user" value="" placeholder="Name" pattern="^[a-zA-Z0-9]{1,20}$">
+        </div>
+        <div class="Field">
+            <label for="password">Password:</label>
+            <input required type="password" id="password" name="Pswd" class="form-control input_pass" value="" placeholder="Password" pattern="^[\w\W]{1,20}$">
+        </div>
+        <div class="Submit">
+            <button type="submit" name="button" class="Login_Button">Crear Usuario</button>
+        </div>
+    </form>
+    <!--Si llega Error Message de la BD, el siguiente IF en C# lo muestra-->
+    @if (ViewData["Mensaje"] != null)
+    {
+        <span class="Error_Msg">@ViewData["Mensaje"]</span>
+    }
+</div>

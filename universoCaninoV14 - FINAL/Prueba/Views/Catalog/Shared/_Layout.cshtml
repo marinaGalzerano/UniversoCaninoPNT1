@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Prueba</title>
+    <link rel="stylesheet" href="~/src/StyleSheet.css" />
+   
+
+</head>
+<body>
+        <div class="Container">
+
+    <header class="HeaderNav">
+        <div class="Logo">
+            <img src="/src/ASSET/logo/logo.png">
+        </div>
+        <div id="RightContainer">
+            <nav class="Navigation">
+                    <a id="Home" class="navSelector" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+                    <a id="Home" class="navSelector" asp-area="" asp-controller="Catalog" asp-action="Index">Catálogo</a>
+                    <span class="Separator"></span>
+                    <a id="Home" class="navSelector" asp-area="" asp-controller="ABMStock" asp-action="Index">ABM</a>           
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <div class="ContactContainer">
+            <div class="Logo">
+                <img src="~/src/ASSET/logo/logo.png">
+            </div>
+            <div id="ContactLink">
+                <ul>
+                    CONTACT
+                    <li id="Wsp">wsp: 123-123-123</li>
+                    <li id="Wsp">Tel: 4-123-123</li>
+                </ul>
+                <ul class="LinksFooter">
+                    LINKS:
+                    <li>
+                            <a href="https://www.facebook.com"><img src="~/src/ASSET/facebook.png"></a>
+                    </li>
+                    <li>
+                            <a href="https://www.instagram.com"><img src="~/src/ASSET/instagram.png"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+ <!--   <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false) -->
+</div>
+</body>
+</html>
