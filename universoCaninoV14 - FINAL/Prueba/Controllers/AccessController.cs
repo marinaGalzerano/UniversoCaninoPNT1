@@ -11,15 +11,19 @@ using System.Windows;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
-
 namespace Prueba.Controllers
 {
     public class AccessController : Controller
     {
 
-        static string cadena = "Server=LAPTOP-5B7EJPKC;Database=UCaninoDB;Trusted_Connection=True;TrustServerCertificate=True;";
+        static string cadena = "Server=MARINA\\SQLEXPRESS;Database=UCaninoDB;Trusted_Connection=True;TrustServerCertificate=True;";
 
-    
+
+        public ActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index","Home");
+        }
 
         // GET: Acceso
         public ActionResult Login()
@@ -129,4 +133,8 @@ namespace Prueba.Controllers
         }
 
     }
+
+
+   
+
 }
