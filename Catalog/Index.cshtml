@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Prueba.Models.Product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="TwoPanelCatalog">
+ 
+
+    <div class="RightPanel">
+        <div class="ProductGrid">
+           
+            @foreach (var item in Model)
+            {
+                    <div class="Product">
+                        <img src=@Html.DisplayFor(modelItem => item.Image)>
+                        <div class="DataProduct">
+                            <h3 class="ProductTitle">@Html.DisplayFor(modelItem => item.Name)</h3>
+                            <p class="ProductDescription">@Html.DisplayFor(modelItem => item.Descr)</p>
+                            <p class="ProductPrice">Precio: <span class="Price">$@Html.DisplayFor(modelItem => item.Price)</span></p>
+                            <a class="ProductBuy" asp-area="" asp-action="Product" asp-route-id="@item.Id">Ver</a>
+                        </div>
+                    </div>
+            }
+        </div>
+    </div>
+</div>
