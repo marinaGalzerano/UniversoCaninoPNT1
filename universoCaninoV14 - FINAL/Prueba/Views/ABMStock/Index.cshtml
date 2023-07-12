@@ -5,9 +5,16 @@
 
 
 <div class="ABMStock_Index">
+  
     <div class="ABM_TitleContainer">
         <h1 class="ABM_Title">ABM</h1>
-        <div class="ABM_Button"><a class="ABM_Create" asp-action="Create">Create New</a></div>
+
+        <form action="@Url.Action("Logout", "Access")" method="post">
+            <button type="submit" class="btn-logout" style="background-color: red; color: white; border: none; font-family: var(--INTER); font-size: 1rem; border-radius: 0.5rem; color: var(--WHITE);">Cerrar sesión</button>
+        </form>
+
+
+        <div class="ABM_Button"><a class="ABM_Create" asp-action="Create">Crear nuevo</a></div>
     </div>
     <table class="ABM_Table">
         <thead>
@@ -52,9 +59,9 @@
                         @Html.DisplayFor(modelItem => item.Tipo)
                     </td>
                     <td class="ABM_Button_Table">
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a> |
                     </td>
                 </tr>
             }
